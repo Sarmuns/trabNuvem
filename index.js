@@ -6,11 +6,11 @@ var app = express();
 
 
 const __filename = fileURLToPath(import.meta.url);
-
 const __dirname = path.dirname(__filename);
-console.log('directory-name 👉', __dirname);
-
-console.log(path.join(__dirname, 'index.html'));
+const port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log(`App de Exemplo escutando na porta ${port}!`);
+});
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'));
@@ -80,8 +80,4 @@ app.get('/circuloArea', function(req, res) {
   const raio = req.query.raio;
 
   res.send('area = ' + funcoes.areaCirculo(raio));
-});
-
-app.listen(3000, function() {
-  console.log('App de Exemplo escutando na porta 3000!');
 });

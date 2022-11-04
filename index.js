@@ -81,3 +81,13 @@ app.get('/circuloArea', function(req, res) {
 
   res.send('area = ' + funcoes.areaCirculo(raio));
 });
+
+app.get('/triangulo', function(req, res) {
+  const lado1 = req.query.lado1;
+  const lado2 = req.query.lado2;
+  const lado3 = req.query.lado3;
+
+
+  res.send(funcoes.trianguloCheck(lado1,lado2,lado3));
+});
+

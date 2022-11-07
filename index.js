@@ -129,3 +129,32 @@ app.get('/retanguloArea', function(req, res) {
   res.send('area = ' + funcoes.areaRetangulo(lado1, lado2));
 });
 
+app.get('/trapezio', function(req, res) {
+
+  const baseEsquerda = req.query.baseEsquerda;
+  const baseDireita = req.query.baseDireita;
+  const altura = req.query.altura;
+  res.send(`<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .trapezoid {
+    border-bottom: ${altura*10}px solid #555;
+    border-left: ${baseEsquerda*10}px solid transparent;
+    border-right: ${baseDireita*10}px solid transparent;
+    height: 0;
+    width: 125px;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Trapezio em CSS</h2>
+  <div class="trapezoid "></div>
+  
+  </body>
+  </html> `
+
+  )
+});
+

@@ -91,3 +91,41 @@ app.get('/triangulo', function(req, res) {
   res.send(funcoes.trianguloCheck(lado1,lado2,lado3));
 });
 
+app.get('/retangulo', function(req, res){
+  const lado1 = req.query.lado1;
+  const lado2 = req.query.lado2;
+  if(lado1 && lado2 > 0){
+
+    res.send(`<html>
+    <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .rectangle {
+    height:  ${lado1*10}px;
+    width:  ${lado2*10}px;
+    background-color: #555;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Retangulo com lados: ${lado1} e ${lado2}</h2>
+  <div class="rectangle"></div>
+  
+  </body>
+  </html> `);
+  
+  
+}else{
+  res.send("Nao forma retangulo");
+}  
+
+
+});
+
+app.get('/retanguloArea', function(req, res) {
+  const lado1 = req.query.lado1;
+  const lado2 = req.query.lado2;
+  res.send('area = ' + funcoes.areaRetangulo(lado1, lado2));
+});
+

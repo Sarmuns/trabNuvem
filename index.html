@@ -4,29 +4,43 @@
   <meta charset="UTF-8">
 </head>
 <body>
-  <h1>Geometry Calculator</h1>
-  <p>Integrantes: ashdas</p>
+  <h1>Calculadora Geometrica</h1>
   <div>
-  <form action="http://localhost:3000/quadrado">
-    <input type="text" name="lado" placeholder="lado" required>
-    <input class="subscribe-button" type="submit" value="Ver quadrado"/>
-  </form>
-</div>
-<div>
-  <form action="http://localhost:3000/quadradoArea">
-    <input type="text" name="lado" placeholder="lado" required>
-    <input class="subscribe-button" type="submit" value="Calcular area quadrado"/>
-  </form>
-  <div>
-    <form action="http://localhost:3000/circulo">
-      <input type="text" name="raio" placeholder="raio" required>
-      <input class="subscribe-button" type="submit" value="Ver circulo"/>
+    <form action="http://localhost:3000/quadrado">
+      <input type="text" name="lado" placeholder="lado" required>
+      <input class="subscribe-button" type="submit" value="Ver quadrado"/>
     </form>
   </div>
   <div>
-    <form action="http://localhost:3000/circuloArea">
-      <input type="text" name="raio" placeholder="raio" required>
-      <input class="subscribe-button" type="submit" value="Calcular area circulo"/>
+    <form action="http://localhost:3000/quadradoArea">
+      <input type="text" name="lado" placeholder="lado" required>
+      <input class="subscribe-button" type="submit" value="Calcular area quadrado"/>
+    </form>
+    <div>
+      <form action="http://localhost:3000/circulo">
+        <input type="text" name="raio" placeholder="raio" required>
+        <input class="subscribe-button" type="submit" value="Ver circulo"/>
+      </form>
+    </div>
+    <div>
+      <form action="http://localhost:3000/circuloArea">
+        <input type="text" name="raio" placeholder="raio" required>
+        <input class="subscribe-button" type="submit" value="Calcular area circulo"/>
+      </form>
+  </div>
+  <div>
+    <form action="http://localhost:3000/triangulo">
+      <input type="text" name="lado1" placeholder="hipotenusa" required>
+      <input type="text" name="lado2" placeholder="cateto 1" required>
+      <input type="text" name="lado3" placeholder="cateto 2" required>
+      <input class="subscribe-button" type="submit" value="classificacao quanto ao angulo"/>
+    </form>
+  </div>
+  <div>
+    <form action="http://localhost:3000/retangulo">
+      <input type="text" name="lado1" placeholder="lado 1" required>
+      <input type="text" name="lado2" placeholder="lado 2" required>
+      <input class="subscribe-button" type="submit" value="Ver retangulo"/>
     </form>
 </div>
 <div>
@@ -59,5 +73,6 @@
     <input class="subscribe-button" type="submit" value="ver trapezio"/>
   </form>
 </div>
+
 </body>
 </html>

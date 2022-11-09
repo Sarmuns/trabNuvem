@@ -67,9 +67,6 @@ app.get('/circulo', function(req, res){
     res.send('nao existe raio negativo ou igual a zero');
   }
 });
-
-
-
 app.get('/quadradoArea', function(req, res) {
   const lado = req.query.lado;
   // let result = {'area': funcoes.areaQuadrado(lado)};
@@ -81,3 +78,78 @@ app.get('/circuloArea', function(req, res) {
 
   res.send('area = ' + funcoes.areaCirculo(raio));
 });
+
+
+app.get('/triangulo', function(req, res) {
+  const lado1 = req.query.lado1;
+  const lado2 = req.query.lado2;
+  const lado3 = req.query.lado3;
+
+
+  res.send(funcoes.trianguloCheck(lado1,lado2,lado3));
+});
+app.get('/retangulo', function(req, res){
+  const lado1 = req.query.lado1;
+  const lado2 = req.query.lado2;
+  if(lado1 && lado2 > 0){
+
+    res.send(`<html>
+    <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .rectangle {
+    height:  ${lado1*10}px;
+    width:  ${lado2*10}px;
+    background-color: #555;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Retangulo com lados: ${lado1} e ${lado2}</h2>
+  <div class="rectangle"></div>
+  
+  </body>
+  </html> `);
+  
+  
+}else{
+  res.send("Nao forma retangulo");
+}  
+
+
+});
+app.get('/retanguloArea', function(req, res) {
+  const lado1 = req.query.lado1;
+  const lado2 = req.query.lado2;
+  res.send('area = ' + funcoes.areaRetangulo(lado1, lado2));
+});
+app.get('/trapezio', function(req, res) {
+
+  const baseEsquerda = req.query.baseEsquerda;
+  const baseDireita = req.query.baseDireita;
+  const altura = req.query.altura;
+  res.send(`<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .trapezoid {
+    border-bottom: ${altura*10}px solid #555;
+    border-left: ${baseEsquerda*10}px solid transparent;
+    border-right: ${baseDireita*10}px solid transparent;
+    height: 0;
+    width: 125px;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Trapezio em CSS</h2>
+  <div class="trapezoid "></div>
+  
+  </body>
+  </html> `
+
+  )
+});
+

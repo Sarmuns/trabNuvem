@@ -67,9 +67,6 @@ app.get('/circulo', function(req, res){
     res.send('nao existe raio negativo ou igual a zero');
   }
 });
-
-
-
 app.get('/quadradoArea', function(req, res) {
   const lado = req.query.lado;
   // let result = {'area': funcoes.areaQuadrado(lado)};
@@ -82,6 +79,7 @@ app.get('/circuloArea', function(req, res) {
   res.send('area = ' + funcoes.areaCirculo(raio));
 });
 
+
 app.get('/triangulo', function(req, res) {
   const lado1 = req.query.lado1;
   const lado2 = req.query.lado2;
@@ -90,7 +88,6 @@ app.get('/triangulo', function(req, res) {
 
   res.send(funcoes.trianguloCheck(lado1,lado2,lado3));
 });
-
 app.get('/retangulo', function(req, res){
   const lado1 = req.query.lado1;
   const lado2 = req.query.lado2;
@@ -122,13 +119,11 @@ app.get('/retangulo', function(req, res){
 
 
 });
-
 app.get('/retanguloArea', function(req, res) {
   const lado1 = req.query.lado1;
   const lado2 = req.query.lado2;
   res.send('area = ' + funcoes.areaRetangulo(lado1, lado2));
 });
-
 app.get('/trapezio', function(req, res) {
 
   const baseEsquerda = req.query.baseEsquerda;

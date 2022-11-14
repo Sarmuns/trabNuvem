@@ -158,3 +158,7 @@ app.get('/trapezio', function(req, res) {
   )
 });
 
+app.get("/creditos", (req, res) => {
+  res.sendFile(path.join(__dirname, '/creditos.html'));
+});
+

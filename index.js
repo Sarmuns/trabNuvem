@@ -76,6 +76,7 @@ app.get('/quadradoArea', function(req, res) {
   // res.send(result);
   res.send('area = ' + funcoes.areaQuadrado(lado));
 });
+
 app.get('/circuloArea', function(req, res) {
   const raio = req.query.raio;
 

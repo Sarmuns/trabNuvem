@@ -73,6 +73,7 @@ app.get('/quadradoArea', function(req, res) {
   // res.send(result);
   res.send('area = ' + funcoes.areaQuadrado(lado));
 });
+
 app.get('/circuloArea', function(req, res) {
   const raio = req.query.raio;
 
@@ -151,5 +152,9 @@ app.get('/trapezio', function(req, res) {
   </html> `
 
   )
+});
+
+app.get("/creditos", (req, res) => {
+  res.sendFile(path.join(__dirname, '/creditos.html'));
 });
 

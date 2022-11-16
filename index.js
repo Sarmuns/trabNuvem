@@ -82,9 +82,9 @@ app.get('/circuloArea', function(req, res) {
 
 
 app.get('/triangulo', function(req, res) {
-  const lado1 = req.query.lado1;
-  const lado2 = req.query.lado2;
-  const lado3 = req.query.lado3;
+  const lado1 = parseInt(req.query.lado1);
+  const lado2 = parseInt(req.query.lado2);
+  const lado3 = parseInt(req.query.lado3);
 
 
   res.send(funcoes.trianguloCheck(lado1,lado2,lado3));
